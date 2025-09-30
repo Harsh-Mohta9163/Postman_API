@@ -61,12 +61,20 @@ Example:
 GET /books?genre=Fiction&available=true
 ```
 
+Postman example (Get all books):
+
+![Get all books](images/get_all_book.png)
+
 3. GET /books/{book_id}
 - Description: Retrieve a single book by ID
 - Path parameter: book_id (int)
 - Responses:
   - 200: book object with id
   - 404: book not found
+
+Postman example (Get specific book):
+
+![Get specific book](images/get_specific_book.png)
 
 4. POST /books
 - Description: Create a new book
@@ -87,6 +95,10 @@ Example request body:
 }
 ```
 
+Postman example (Create new book):
+
+![Create new book](images/Create_new_book.png)
+
 5. PUT /books/{book_id}
 - Description: Update an existing book (partial updates allowed via BookUpdate)
 - Path parameter: book_id (int)
@@ -96,11 +108,19 @@ Example request body:
   - 404: book not found
   - 400: attempted ISBN conflict with another book
 
+Postman example (Update book):
+
+![Update book](images/update_book.png)
+
 6. DELETE /books/{book_id}
 - Description: Delete a book by ID
 - Responses:
   - 200: success with deleted book info
   - 404: book not found
+
+Postman example (Delete book):
+
+![Delete book](images/delete_book.png)
 
 ## Implementation notes / what I did
 - Built a small FastAPI application that exposes CRUD endpoints for books.
@@ -114,14 +134,3 @@ Example request body:
 - Note: The current implementation is intended for learning/demonstration. It is not production-ready:
   - Data is not persistent.
   - The global counter and dict are not thread/process safe; consider using a database (SQLite/Postgres) and proper concurrency control for real apps.
-
-## Suggested improvements
-- Persist data to a database (SQLite for local testing, Postgres for production).
-- Replace global state with a repository layer or use an ORM (SQLModel/SQLAlchemy).
-- Add request/response schemas with examples for the OpenAPI docs.
-- Add unit tests and CI integration.
-- Add authentication/authorization if needed.
-
-## Contact / Submission
-- Roll Number: 106
-- Topic: Simple Book Catalog API (Roll Number % 3 == 1)
