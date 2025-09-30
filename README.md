@@ -28,10 +28,6 @@ Option B — run the script directly:
 python restapi_106.py
 ```
 
-API docs are available when the server runs:
-- Interactive Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
-
 ## Models
 Book (required fields)
 - title: string
@@ -131,6 +127,3 @@ Postman example (Delete book):
   - Return appropriate HTTP status codes and messages (400, 404, 201, 200).
 - Added query filters (genre, available) to GET /books.
 - Included inline documentation (docstrings) and a root endpoint listing available endpoints.
-- Note: The current implementation is intended for learning/demonstration. It is not production-ready:
-  - Data is not persistent.
-  - The global counter and dict are not thread/process safe; consider using a database (SQLite/Postgres) and proper concurrency control for real apps.

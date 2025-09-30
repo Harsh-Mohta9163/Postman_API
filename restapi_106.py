@@ -1,12 +1,3 @@
-"""
-REST API Lab Submission - Book Catalog API
-Roll Number: 106
-Topic: Simple Book Catalog API (Roll Number % 3 == 1)
-
-This API manages a book catalog with CRUD operations using FastAPI.
-Data is stored in an in-memory dictionary acting as a simple database.
-"""
-
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
 from typing import Optional, Dict
